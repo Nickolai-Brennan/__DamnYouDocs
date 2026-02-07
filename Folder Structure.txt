@@ -1,0 +1,87 @@
+dambyoudocs/
+├── README.md
+├── .gitignore
+├── .env.example
+├── docker-compose.yml
+├── docs/
+│   ├── architecture/
+│   │   ├── system-overview.md
+│   │   ├── data-flow.md
+│   │   └── auth-model.md
+│   ├── templates/
+│   │   ├── tech/
+│   │   ├── business/
+│   │   ├── project/
+│   │   └── operations/
+│   └── exports/
+│       └── sample-outputs/
+│
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.ts
+│   ├── tsconfig.json
+│   ├── index.html
+│   └── src/
+│       ├── app/
+│       │   ├── routes/
+│       │   ├── layouts/
+│       │   └── providers/
+│       ├── components/
+│       │   ├── editor/
+│       │   ├── templates/
+│       │   ├── exports/
+│       │   └── ui/
+│       ├── graphql/
+│       │   ├── queries/
+│       │   ├── mutations/
+│       │   └── fragments/
+│       ├── styles/
+│       ├── utils/
+│       └── main.tsx
+│
+├── backend/
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── src/
+│       ├── server.ts
+│       ├── app.ts
+│       ├── config/
+│       ├── modules/
+│       │   ├── auth/
+│       │   ├── users/
+│       │   ├── templates/
+│       │   ├── documents/
+│       │   ├── exports/
+│       │   └── audit/
+│       ├── graphql/
+│       │   ├── schema.ts
+│       │   ├── resolvers/
+│       │   └── context.ts
+│       ├── services/
+│       │   ├── pdf/
+│       │   ├── markdown/
+│       │   └── code-export/
+│       └── db/
+│           ├── index.ts
+│           ├── migrations/
+│           └── seeds/
+│
+├── database/
+│   ├── schema/
+│   │   ├── users.sql
+│   │   ├── templates.sql
+│   │   ├── documents.sql
+│   │   ├── versions.sql
+│   │   ├── exports.sql
+│   │   └── audit_events.sql
+│   ├── views/
+│   └── functions/
+│
+├── scripts/
+│   ├── setup-dev.sh
+│   ├── setup-dev.ps1
+│   └── seed-templates.ts
+│
+└── infra/
+    ├── docker/
+    └── nginx/
