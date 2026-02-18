@@ -1,0 +1,143 @@
+{
+  "prompt_id": "prm_readme_ai_v1",
+  "name": "README Generator (Section-Aware)",
+  "version": "1.0.0",
+  "generation_strategy": "section_by_section",
+  "global_rules": [
+    "Be technically accurate. Do not fabricate stack components, metrics, users, or URLs.",
+    "If unknown, keep placeholders or output 'TBD' rather than guessing.",
+    "No marketing fluff. Use professional technical tone.",
+    "Output valid Markdown only (unless asked otherwise).",
+    "Prefer short, scannable bullets over long paragraphs."
+  ],
+  "system_prompt": "You are a technical documentation generator. Generate a professional README.md using the provided template and context. Follow the global rules strictly. If any required field is missing, keep placeholders or mark as TBD. Keep formatting valid Markdown.",
+  "input_contract": {
+    "required": [
+      "project_name",
+      "one_sentence_value_proposition",
+      "project_type",
+      "target_audience",
+      "project_status",
+      "problem_statement",
+      "solution_summary",
+      "core_features",
+      "architecture_type"
+    ],
+    "optional": [
+      "data_flow_description",
+      "frontend_framework",
+      "frontend_language",
+      "state_management",
+      "ui_library",
+      "backend_runtime",
+      "backend_framework",
+      "api_type",
+      "auth_strategy",
+      "database_type",
+      "orm",
+      "migration_tool",
+      "hosting",
+      "ci_cd",
+      "containerization",
+      "prerequisites",
+      "repo_url",
+      "install_command",
+      "dev_command",
+      "env_variables_block",
+      "test_command",
+      "coverage_target",
+      "build_command",
+      "deployment_strategy",
+      "auth_model",
+      "authorization_model",
+      "validation_strategy",
+      "rate_limit_strategy",
+      "caching_strategy",
+      "scaling_strategy",
+      "indexing_strategy",
+      "current_phase",
+      "next_phase",
+      "long_term_goals",
+      "license_type",
+      "contact_info"
+    ]
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "prompt": "Write the Overview section using: project_type, target_audience, project_status, problem_statement, solution_summary. Keep it concise and technical. Do not add claims not supported by inputs."
+    },
+    {
+      "id": "features",
+      "title": "Core Features",
+      "prompt": "List core_features as bullet points. Normalize them to consistent verb-first phrasing (e.g., 'Generate...', 'Export...', 'Sync...') without changing meaning."
+    },
+    {
+      "id": "architecture",
+      "title": "Architecture Overview",
+      "prompt": "Describe architecture_type and data_flow_description. Include the high-level flow line exactly: 'User → Frontend → API → Services → Database → Output'. If data_flow_description is missing, output 'TBD'."
+    },
+    {
+      "id": "stack",
+      "title": "Tech Stack",
+      "prompt": "Populate the Tech Stack section. If a field is missing, keep the placeholder as 'TBD' rather than inventing."
+    },
+    {
+      "id": "getting_started",
+      "title": "Getting Started",
+      "prompt": "Write prerequisites and installation steps using prerequisites, repo_url, install_command, dev_command. If commands are missing, use 'TBD'. Keep steps minimal and correct."
+    },
+    {
+      "id": "env",
+      "title": "Environment Variables",
+      "prompt": "Render env_variables_block inside a fenced code block. If missing, output a minimal placeholder block with DATABASE_URL= and one auth secret line."
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "prompt": "Add test_command and coverage_target. If missing, output 'TBD'."
+    },
+    {
+      "id": "deployment",
+      "title": "Deployment",
+      "prompt": "Add build_command and deployment_strategy. If missing, output 'TBD'. Do not mention specific vendors unless provided."
+    },
+    {
+      "id": "security",
+      "title": "Security Model",
+      "prompt": "List auth_model, authorization_model, validation_strategy, rate_limit_strategy. If missing, output 'TBD'. Avoid security promises."
+    },
+    {
+      "id": "performance",
+      "title": "Performance Considerations",
+      "prompt": "List caching_strategy, scaling_strategy, indexing_strategy. If missing, output 'TBD'."
+    },
+    {
+      "id": "roadmap",
+      "title": "Roadmap",
+      "prompt": "Write roadmap from current_phase, next_phase, long_term_goals. If missing, output 'TBD'."
+    },
+    {
+      "id": "license_contact",
+      "title": "License & Contact",
+      "prompt": "Output license_type and contact_info. If missing, output 'TBD'."
+    }
+  ],
+  "output_contract": {
+    "format": "markdown",
+    "must_include_headings": [
+      "# {{project_name}}",
+      "## 📌 Overview",
+      "## 🚀 Core Features",
+      "## 🏗 Architecture Overview",
+      "## 🧰 Tech Stack",
+      "## ⚙ Getting Started"
+    ],
+    "must_not_include": [
+      "marketing superlatives",
+      "unverified claims",
+      "invented dependencies"
+    ]
+  }
+}
