@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://damnyoudocs.com/schemas/readme-input.schema.json",
+  "title": "README Generator Input Schema",
+  "description": "Validation schema for README AI Auto-Fill generator",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "project_name",
+    "one_sentence_value_proposition",
+    "project_type",
+    "target_audience",
+    "project_status",
+    "problem_statement",
+    "solution_summary",
+    "core_features",
+    "architecture_type"
+  ],
+
+  "properties": {
+
+    "project_name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120
+    },
+
+    "one_sentence_value_proposition": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200
+    },
+
+    "project_type": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 60
+    },
+
+    "target_audience": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120
+    },
+
+    "project_status": {
+      "type": "string",
+      "enum": ["Idea", "MVP", "Beta", "Production"]
+    },
+
+    "problem_statement": {
+      "type": "string",
+      "minLength": 20
+    },
+
+    "solution_summary": {
+      "type": "string",
+      "minLength": 20
+    },
+
+    "core_features": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+
+    "architecture_type": {
+      "type": "string",
+      "enum": ["Monolith", "Modular Monolith", "Microservices", "Hybrid"]
+    },
+
+    "data_flow_description": {
+      "type": "string"
+    },
+
+    "frontend_framework": { "type": "string" },
+    "frontend_language": { "type": "string" },
+    "state_management": { "type": "string" },
+    "ui_library": { "type": "string" },
+
+    "backend_runtime": { "type": "string" },
+    "backend_framework": { "type": "string" },
+    "api_type": {
+      "type": "string",
+      "enum": ["REST", "GraphQL", "Hybrid"]
+    },
+    "auth_strategy": { "type": "string" },
+
+    "database_type": { "type": "string" },
+    "orm": { "type": "string" },
+    "migration_tool": { "type": "string" },
+
+    "hosting": { "type": "string" },
+    "ci_cd": { "type": "string" },
+    "containerization": { "type": "string" },
+
+    "prerequisites": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+
+    "repo_url": {
+      "type": "string",
+      "format": "uri"
+    },
+
+    "install_command": { "type": "string" },
+    "dev_command": { "type": "string" },
+
+    "env_variables_block": { "type": "string" },
+
+    "test_command": { "type": "string" },
+    "coverage_target": { "type": "string" },
+
+    "build_command": { "type": "string" },
+    "deployment_strategy": { "type": "string" },
+
+    "auth_model": { "type": "string" },
+    "authorization_model": { "type": "string" },
+    "validation_strategy": { "type": "string" },
+    "rate_limit_strategy": { "type": "string" },
+
+    "caching_strategy": { "type": "string" },
+    "scaling_strategy": { "type": "string" },
+    "indexing_strategy": { "type": "string" },
+
+    "current_phase": { "type": "string" },
+    "next_phase": { "type": "string" },
+    "long_term_goals": { "type": "string" },
+
+    "license_type": { "type": "string" },
+    "contact_info": { "type": "string" }
+  }
+}
