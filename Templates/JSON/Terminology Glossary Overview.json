@@ -1,0 +1,29 @@
+{
+  "template_id": "tpl_terminology_glossary_v1",
+  "template_name": "Terminology Glossary",
+  "category": "overview_orientation",
+  "doc_type": "TERMINOLOGY_GLOSSARY.md",
+  "output_format": "markdown",
+  "modes": ["standard", "advanced"],
+
+  "rules": [
+    "Definitions must be clear and concise.",
+    "No circular definitions.",
+    "Avoid vague language.",
+    "Each term must include context.",
+    "All related terms must exist within glossary."
+  ],
+
+  "variables": [
+    {
+      "key": "project_name",
+      "type": "string",
+      "required": true
+    },
+    {
+      "key": "terms",
+      "type": "array",
+      "required": true
+    }
+  ]
+}
