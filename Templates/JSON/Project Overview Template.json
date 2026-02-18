@@ -1,0 +1,59 @@
+{
+  "template_id": "tpl_project_overview_ai_v1",
+  "template_name": "Project Overview (AI Optimized)",
+  "version": "1.0.0",
+  "category": "overview_orientation",
+  "doc_type": "PROJECT_OVERVIEW.md",
+  "output_format": "markdown",
+  "modes": ["lean", "standard", "advanced"],
+
+  "rules": [
+    "Do not invent technologies or metrics.",
+    "If data is missing, output 'TBD'.",
+    "Avoid marketing language.",
+    "Use concise, structured writing.",
+    "Maintain section formatting."
+  ],
+
+  "variables": [
+    { "key": "project_name", "type": "string", "required": true },
+    { "key": "project_type", "type": "string", "required": true },
+    { "key": "owner", "type": "string", "required": false },
+    { "key": "project_status", "type": "enum", "options": ["Idea", "MVP", "Beta", "Production"], "required": true },
+    { "key": "version", "type": "string", "required": false },
+    { "key": "last_updated", "type": "string", "required": false },
+
+    { "key": "executive_summary", "type": "multiline_string", "required": false },
+
+    { "key": "core_problem", "type": "string", "required": true },
+    { "key": "affected_users", "type": "string", "required": true },
+    { "key": "cost_of_inaction", "type": "string", "required": false },
+    { "key": "existing_alternatives", "type": "string", "required": false },
+    { "key": "alternative_failures", "type": "string", "required": false },
+
+    { "key": "product_category", "type": "string", "required": true },
+    { "key": "core_mechanism", "type": "string", "required": false },
+    { "key": "differentiators", "type": "string", "required": false },
+
+    { "key": "mvp_scope", "type": "string_array", "required": true },
+    { "key": "excluded_scope", "type": "string_array", "required": false },
+
+    { "key": "architecture_type", "type": "enum", "options": ["Monolith", "Modular Monolith", "Microservices", "Hybrid"], "required": true },
+    { "key": "data_flow", "type": "string", "required": false },
+    { "key": "dependencies", "type": "string", "required": false },
+
+    { "key": "product_metrics", "type": "string", "required": false },
+    { "key": "business_metrics", "type": "string", "required": false },
+    { "key": "technical_metrics", "type": "string", "required": false },
+
+    { "key": "risks", "type": "string", "required": false },
+    { "key": "assumptions", "type": "string", "required": false },
+
+    { "key": "current_phase", "type": "string", "required": false },
+    { "key": "next_phase", "type": "string", "required": false },
+    { "key": "long_term_direction", "type": "string", "required": false },
+    { "key": "definition_of_success", "type": "string", "required": false }
+  ],
+
+  "markdown_template": "# {{project_name}}\n\n---\n\n## 1️⃣ Project Identity\n\nProject Type: {{project_type}}\nOwner: {{owner}}\nStatus: {{project_status}}\nVersion: {{version}}\nLast Updated: {{last_updated}}\n\n---\n\n## 2️⃣ Executive Summary\n\n{{executive_summary}}\n\n---\n\n## 3️⃣ Problem Definition\n\n### Core Problem\n{{core_problem}}\n\n### Affected Users\n{{affected_users}}\n\n### Cost of Inaction\n{{cost_of_inaction}}\n\n### Existing Alternatives\n{{existing_alternatives}}\n\n### Why They Fail\n{{alternative_failures}}\n\n---\n\n## 4️⃣ Proposed Solution\n\nProduct Category: {{product_category}}\n\nCore Mechanism:\n{{core_mechanism}}\n\nDifferentiators:\n{{differentiators}}\n\n---\n\n## 5️⃣ Scope\n\n### In Scope (MVP)\n{{#each mvp_scope}}\n- {{this}}\n{{/each}}\n\n### Out of Scope\n{{#each excluded_scope}}\n- {{this}}\n{{/each}}\n\n---\n\n## 6️⃣ Architecture Summary\n\nSystem Type: {{architecture_type}}\n\nData Flow:\n{{data_flow}}\n\nDependencies:\n{{dependencies}}\n\n---\n\n## 7️⃣ Success Metrics\n\nProduct Metrics:\n{{product_metrics}}\n\nBusiness Metrics:\n{{business_metrics}}\n\nTechnical Metrics:\n{{technical_metrics}}\n\n---\n\n## 8️⃣ Risks & Assumptions\n\nRisks:\n{{risks}}\n\nAssumptions:\n{{assumptions}}\n\n---\n\n## 9️⃣ Roadmap Snapshot\n\nCurrent Phase:\n{{current_phase}}\n\nNext Phase:\n{{next_phase}}\n\nLong-Term Direction:\n{{long_term_direction}}\n\n---\n\n## 🔟 Definition of Success\n\n{{definition_of_success}}\n"
+}
