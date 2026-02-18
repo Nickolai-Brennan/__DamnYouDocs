@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://damnyoudocs.com/schemas/project-overview.schema.json",
+  "title": "AI Project Overview Input Schema",
+  "description": "Validation schema for AI-generated Project Overview documents",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "project_name",
+    "project_type",
+    "project_status",
+    "core_problem",
+    "affected_users",
+    "product_category",
+    "architecture_type",
+    "mvp_scope"
+  ],
+
+  "properties": {
+
+    "project_name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 150
+    },
+
+    "project_type": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 80
+    },
+
+    "owner": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100
+    },
+
+    "project_status": {
+      "type": "string",
+      "enum": ["Idea", "MVP", "Beta", "Production"]
+    },
+
+    "version": {
+      "type": "string"
+    },
+
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "repository_url": {
+      "type": "string",
+      "format": "uri"
+    },
+
+    "primary_environment": {
+      "type": "string"
+    },
+
+    "secondary_environments": {
+      "type": "string"
+    },
+
+    "executive_summary": {
+      "type": "string",
+      "minLength": 50
+    },
+
+    "core_problem": {
+      "type": "string",
+      "minLength": 20
+    },
+
+    "affected_users": {
+      "type": "string",
+      "minLength": 5
+    },
+
+    "cost_of_inaction": {
+      "type": "string"
+    },
+
+    "existing_alternatives": {
+      "type": "string"
+    },
+
+    "alternative_failures": {
+      "type": "string"
+    },
+
+    "primary_role": { "type": "string" },
+    "primary_goals": { "type": "string" },
+    "primary_skill_level": { "type": "string" },
+    "primary_frustrations": { "type": "string" },
+
+    "secondary_role": { "type": "string" },
+    "secondary_goals": { "type": "string" },
+
+    "non_users": { "type": "string" },
+
+    "product_category": {
+      "type": "string",
+      "minLength": 3
+    },
+
+    "core_mechanism": {
+      "type": "string",
+      "minLength": 20
+    },
+
+    "differentiators": {
+      "type": "string"
+    },
+
+    "mvp_scope": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+
+    "excluded_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "core_features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "purpose": { "type": "string" },
+          "technical_impact": { "type": "string" }
+        }
+      }
+    },
+
+    "user_flow": {
+      "type": "string"
+    },
+
+    "architecture_type": {
+      "type": "string",
+      "enum": ["Monolith", "Modular Monolith", "Microservices", "Hybrid"]
+    },
+
+    "data_flow": {
+      "type": "string"
+    },
+
+    "dependencies": {
+      "type": "string"
+    },
+
+    "revenue_model": {
+      "type": "string"
+    },
+
+    "pricing_strategy": {
+      "type": "string"
+    },
+
+    "cost_drivers": {
+      "type": "string"
+    },
+
+    "product_metrics": {
+      "type": "string"
+    },
+
+    "business_metrics": {
+      "type": "string"
+    },
+
+    "technical_metrics": {
+      "type": "string"
+    },
+
+    "risks": {
+      "type": "string"
+    },
+
+    "assumptions": {
+      "type": "string"
+    },
+
+    "resource_constraints": {
+      "type": "string"
+    },
+
+    "technical_constraints": {
+      "type": "string"
+    },
+
+    "current_phase": {
+      "type": "string"
+    },
+
+    "next_phase": {
+      "type": "string"
+    },
+
+    "long_term_direction": {
+      "type": "string"
+    },
+
+    "definition_of_success": {
+      "type": "string"
+    }
+  }
+}
