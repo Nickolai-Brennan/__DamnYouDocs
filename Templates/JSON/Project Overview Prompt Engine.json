@@ -1,0 +1,65 @@
+{
+  "prompt_id": "prm_project_overview_ai_v1",
+  "name": "Project Overview Generator",
+  "version": "1.0.0",
+  "generation_strategy": "section_by_section",
+
+  "global_rules": [
+    "Do not fabricate technologies or metrics.",
+    "If information is missing, output 'TBD'.",
+    "Avoid marketing language.",
+    "Use structured professional tone.",
+    "Keep paragraphs concise.",
+    "Maintain markdown structure."
+  ],
+
+  "system_prompt": "You are a technical product documentation generator. Generate a structured Project Overview document using the provided input fields. Follow the global rules strictly.",
+
+  "sections": [
+    {
+      "id": "executive_summary",
+      "prompt": "Write a concise executive summary explaining what the project is, who it serves, and the problem it solves."
+    },
+    {
+      "id": "problem_definition",
+      "prompt": "Explain the core problem, who is affected, and why existing alternatives are insufficient."
+    },
+    {
+      "id": "proposed_solution",
+      "prompt": "Describe the product category, core mechanism, and structural differentiators."
+    },
+    {
+      "id": "scope",
+      "prompt": "Clearly outline MVP scope and explicitly excluded features."
+    },
+    {
+      "id": "architecture",
+      "prompt": "Summarize system type and high-level data flow without inventing technical details."
+    },
+    {
+      "id": "metrics",
+      "prompt": "List measurable product, business, and technical metrics. If not provided, output 'TBD'."
+    },
+    {
+      "id": "risks",
+      "prompt": "List realistic risks and assumptions based on input. Avoid speculative analysis."
+    },
+    {
+      "id": "roadmap",
+      "prompt": "Provide a structured roadmap summary based on current and next phases."
+    }
+  ],
+
+  "output_contract": {
+    "format": "markdown",
+    "must_include_sections": [
+      "Project Identity",
+      "Problem Definition",
+      "Proposed Solution",
+      "Scope",
+      "Architecture Summary",
+      "Success Metrics",
+      "Risks & Assumptions"
+    ]
+  }
+}
