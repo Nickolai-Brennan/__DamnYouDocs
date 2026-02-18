@@ -1,0 +1,20 @@
+{
+  "prompt_id": "prm_terminology_glossary_v1",
+  "generation_strategy": "structured_list",
+
+  "global_rules": [
+    "Do not invent undefined system entities.",
+    "Definitions must be under 120 words.",
+    "Avoid repetition.",
+    "Avoid vague or marketing language."
+  ],
+
+  "system_prompt": "You are a documentation taxonomy generator. Generate a structured terminology glossary based on provided terms.",
+
+  "sections": [
+    {
+      "id": "terms",
+      "prompt": "For each term, provide definition, context, related terms, and category."
+    }
+  ]
+}
