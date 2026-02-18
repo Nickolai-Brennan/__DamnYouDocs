@@ -1,0 +1,95 @@
+{
+  "template_id": "tpl_readme_ai_v1",
+  "template_name": "README (AI Auto-Fill Optimized)",
+  "version": "1.0.0",
+  "category": "overview_orientation",
+  "doc_type": "README.md",
+  "output_format": "markdown",
+  "modes": ["lean", "standard", "advanced"],
+  "rules": [
+    "Never invent unknown technologies or facts.",
+    "If data is missing, keep placeholders rather than guessing.",
+    "Use professional technical tone; avoid marketing fluff.",
+    "Keep formatting valid Markdown.",
+    "Respect declared stack fields."
+  ],
+  "variables": [
+    { "key": "project_name", "label": "Project Name", "type": "string", "required": true, "example": "Acme Docs" },
+    { "key": "one_sentence_value_proposition", "label": "One Sentence Value Proposition", "type": "string", "required": true, "example": "A documentation platform that ships clean templates fast." },
+
+    { "key": "project_type", "label": "Project Type", "type": "string", "required": true, "example": "SaaS Web App" },
+    { "key": "target_audience", "label": "Target Audience", "type": "string", "required": true, "example": "Product teams and developers" },
+    { "key": "project_status", "label": "Status", "type": "enum", "required": true, "options": ["Idea", "MVP", "Beta", "Production"], "example": "MVP" },
+
+    { "key": "problem_statement", "label": "Problem Statement", "type": "string", "required": true },
+    { "key": "solution_summary", "label": "Solution Summary", "type": "string", "required": true },
+
+    { "key": "core_features", "label": "Core Features", "type": "string_array", "required": true, "min_items": 3 },
+
+    { "key": "architecture_type", "label": "Architecture Type", "type": "enum", "required": true, "options": ["Monolith", "Modular Monolith", "Microservices", "Hybrid"] },
+    { "key": "data_flow_description", "label": "Data Lifecycle Description", "type": "string", "required": false },
+
+    { "key": "frontend_framework", "label": "Frontend Framework", "type": "string", "required": false },
+    { "key": "frontend_language", "label": "Frontend Language", "type": "string", "required": false },
+    { "key": "state_management", "label": "State Management", "type": "string", "required": false },
+    { "key": "ui_library", "label": "UI Library", "type": "string", "required": false },
+
+    { "key": "backend_runtime", "label": "Backend Runtime", "type": "string", "required": false },
+    { "key": "backend_framework", "label": "Backend Framework", "type": "string", "required": false },
+    { "key": "api_type", "label": "API Type", "type": "enum", "required": false, "options": ["REST", "GraphQL", "Hybrid"] },
+    { "key": "auth_strategy", "label": "Auth Strategy", "type": "string", "required": false },
+
+    { "key": "database_type", "label": "Database Type", "type": "string", "required": false },
+    { "key": "orm", "label": "ORM", "type": "string", "required": false },
+    { "key": "migration_tool", "label": "Migration Tool", "type": "string", "required": false },
+
+    { "key": "hosting", "label": "Hosting", "type": "string", "required": false },
+    { "key": "ci_cd", "label": "CI/CD", "type": "string", "required": false },
+    { "key": "containerization", "label": "Containerization", "type": "string", "required": false },
+
+    { "key": "prerequisites", "label": "Prerequisites", "type": "string_array", "required": false },
+    { "key": "repo_url", "label": "Repository URL", "type": "string", "required": false },
+    { "key": "install_command", "label": "Install Command", "type": "string", "required": false, "example": "npm install" },
+    { "key": "dev_command", "label": "Dev Command", "type": "string", "required": false, "example": "npm run dev" },
+
+    { "key": "env_variables_block", "label": "Environment Variables Block", "type": "multiline_string", "required": false, "example": "DATABASE_URL=\nJWT_SECRET=\nPORT=" },
+
+    { "key": "test_command", "label": "Test Command", "type": "string", "required": false, "example": "npm test" },
+    { "key": "coverage_target", "label": "Coverage Target", "type": "string", "required": false, "example": "Backend 80%+, Frontend 70%+" },
+
+    { "key": "build_command", "label": "Build Command", "type": "string", "required": false, "example": "npm run build" },
+    { "key": "deployment_strategy", "label": "Deployment Strategy", "type": "string", "required": false },
+
+    { "key": "auth_model", "label": "Authentication Model", "type": "string", "required": false },
+    { "key": "authorization_model", "label": "Authorization Model", "type": "string", "required": false, "example": "RBAC" },
+    { "key": "validation_strategy", "label": "Validation Strategy", "type": "string", "required": false },
+    { "key": "rate_limit_strategy", "label": "Rate Limiting Strategy", "type": "string", "required": false },
+
+    { "key": "caching_strategy", "label": "Caching Strategy", "type": "string", "required": false },
+    { "key": "scaling_strategy", "label": "Scaling Strategy", "type": "string", "required": false },
+    { "key": "indexing_strategy", "label": "Indexing Strategy", "type": "string", "required": false },
+
+    { "key": "current_phase", "label": "Current Phase", "type": "string", "required": false },
+    { "key": "next_phase", "label": "Next Phase", "type": "string", "required": false },
+    { "key": "long_term_goals", "label": "Long Term Goals", "type": "string", "required": false },
+
+    { "key": "license_type", "label": "License", "type": "string", "required": false, "example": "MIT" },
+    { "key": "contact_info", "label": "Contact Info", "type": "multiline_string", "required": false, "example": "Owner:\nEmail:\nSupport:" }
+  ],
+  "sections": [
+    { "id": "toc", "title": "Table of Contents", "required": true, "mode_min": "standard" },
+    { "id": "overview", "title": "Overview", "required": true, "mode_min": "lean" },
+    { "id": "features", "title": "Core Features", "required": true, "mode_min": "lean" },
+    { "id": "architecture", "title": "Architecture Overview", "required": true, "mode_min": "standard" },
+    { "id": "stack", "title": "Tech Stack", "required": true, "mode_min": "standard" },
+    { "id": "getting_started", "title": "Getting Started", "required": true, "mode_min": "standard" },
+    { "id": "env", "title": "Environment Variables", "required": false, "mode_min": "standard" },
+    { "id": "testing", "title": "Testing", "required": false, "mode_min": "standard" },
+    { "id": "deployment", "title": "Deployment", "required": false, "mode_min": "advanced" },
+    { "id": "security", "title": "Security Model", "required": false, "mode_min": "advanced" },
+    { "id": "performance", "title": "Performance Considerations", "required": false, "mode_min": "advanced" },
+    { "id": "roadmap", "title": "Roadmap", "required": false, "mode_min": "standard" },
+    { "id": "license", "title": "License", "required": false, "mode_min": "lean" },
+    { "id": "contact", "title": "Contact", "required": false, "mode_min": "lean" }
+  ],
+  "markdown_template": "# {{project_name}}\n\n> {{one_sentence_value_proposition}}\n\n---\n\n## 📌 Overview\n\n### Project Type\n{{project_type}}\n\n### Target Audience\n{{target_audience}}\n\n### Status\n{{project_status}}\n\n### Problem Statement\n{{problem_statement}}\n\n### Solution Summary\n{{solution_summary}}\n\n---\n\n## 🚀 Core Features\n\n{{#each core_features}}\n- {{this}}\n{{/each}}\n\n---\n\n## 🏗 Architecture Overview\n\n### System Type\n{{architecture_type}}\n\n### High-Level Flow\nUser → Frontend → API → Services → Database → Output\n\n### Data Lifecycle\n{{data_flow_description}}\n\n---\n\n## 🧰 Tech Stack\n\n### Frontend\n- Framework: {{frontend_framework}}\n- Language: {{frontend_language}}\n- State Management: {{state_management}}\n- UI Library: {{ui_library}}\n\n### Backend\n- Runtime: {{backend_runtime}}\n- Framework: {{backend_framework}}\n- API Type: {{api_type}}\n- Authentication: {{auth_strategy}}\n\n### Database\n- Primary DB: {{database_type}}\n- ORM: {{orm}}\n- Migration Tool: {{migration_tool}}\n\n### Infrastructure\n- Hosting: {{hosting}}\n- CI/CD: {{ci_cd}}\n- Containerization: {{containerization}}\n\n---\n\n## ⚙ Getting Started\n\n### Prerequisites\n{{#each prerequisites}}\n- {{this}}\n{{/each}}\n\n### Installation\n\n1. Clone repository  \n   `git clone {{repo_url}}`\n\n2. Install dependencies  \n   `{{install_command}}`\n\n3. Configure environment variables\n\n4. Start development server  \n   `{{dev_command}}`\n\n---\n\n## 🔐 Environment Variables\n\n```\n{{env_variables_block}}\n```\n\n---\n\n## 🧪 Testing\n\n### Run Tests\n`{{test_command}}`\n\n### Coverage Target\n{{coverage_target}}\n\n---\n\n## 🚢 Deployment\n\n### Production Build\n`{{build_command}}`\n\n### Deployment Strategy\n{{deployment_strategy}}\n\n---\n\n## 🛡 Security Model\n\n- Authentication: {{auth_model}}\n- Authorization: {{authorization_model}}\n- Validation Strategy: {{validation_strategy}}\n- Rate Limiting: {{rate_limit_strategy}}\n\n---\n\n## 📈 Performance Considerations\n\n- Caching Strategy: {{caching_strategy}}\n- Scaling Approach: {{scaling_strategy}}\n- Indexing Strategy: {{indexing_strategy}}\n\n---\n\n## 🗺 Roadmap\n\n### Current Phase\n{{current_phase}}\n\n### Next Phase\n{{next_phase}}\n\n### Long-Term Goals
