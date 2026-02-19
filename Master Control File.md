@@ -26,11 +26,11 @@ This file acts as:
 ## 🗂️ DOCUMENTATION TABLE OF CONTENTS (MASTER TOC)
 
 ### 0️⃣ Overview & Orientation
-- [ ] README.md
-- [ ] PROJECT_OVERVIEW.md
-- [ ] VISION_AND_GOALS.md
-- [ ] NON_GOALS.md
-- [ ] TERMINOLOGY_GLOSSARY.md
+- [x] README.md
+- [x] PROJECT_OVERVIEW.md
+- [x] VISION_AND_GOALS.md
+- [x] NON_GOALS.md
+- [x] TERMINOLOGY_GLOSSARY.md
 
 ---
 
